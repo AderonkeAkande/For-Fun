@@ -1,0 +1,27 @@
+public class Fibonacci {
+
+	
+			public static void main(String[] args)
+			{
+				int n = 10; // Number of terms to print
+				int[] num = new int[n + 1];
+				for (int i = 1; i <= n; i++) {
+					System.out.print(fibonacci(i, num) + " ");
+				}
+			}
+
+			public static int fibonacci(int n, int[] num)
+			{
+				if (num[n] != 0)
+					return num[n];
+				if (n == 1 || n == 2)
+					return 1;
+				else {
+					num[n] = fibonacci(n - 1, num)
+							+ fibonacci(n - 2, num);
+					return num[n];
+				}
+			}
+		}
+
+
